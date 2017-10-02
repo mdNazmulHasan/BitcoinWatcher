@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+  <data>
+    <variable
+        name="bitcoin"
+        type="najmul.bitcoinwatcher.Bitcoin" />
+  </data>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      android:gravity="center"
+      tools:context="com.example.administrator.bitcoinwatcher.BitcoinActivity">
+
+    <ImageView
+        android:src="@drawable/bitcoin"
+        android:layout_margin="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/dateTimeText"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#4db6ac"
+        android:text="@{String.valueOf(bitcoin.time.updated)}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/usValueText"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#4db6ac"
+        android:text="@{String.valueOf(bitcoin.bpi.uSD.rate)+@string/usd}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/ukValueText"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#4db6ac"
+        android:text="@{String.valueOf(bitcoin.bpi.gBP.rate)+@string/ukp}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/euValueText"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#4db6ac"
+        android:text="@{String.valueOf(bitcoin.bpi.eUR.rate)+@string/euro}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+  </LinearLayout>
+
+
+</layout>
