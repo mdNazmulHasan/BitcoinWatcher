@@ -2,6 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
   <data>
+    <import type="android.view.View"/>
     <variable
         name="bitcoin"
         type="najmul.bitcoinwatcher.Bitcoin" />
@@ -24,7 +25,8 @@
         android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="#4db6ac"
-        android:text="@{String.valueOf(bitcoin.time.updated)}"
+        android:visibility="@{bitcoin.time.updated == null ? View.INVISIBLE : View.VISIBLE}"
+        android:text="@{bitcoin.time.updated}"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
@@ -32,6 +34,7 @@
         android:gravity="center"
         android:textSize="25sp"
         android:textStyle="bold"
+        android:visibility="@{bitcoin.bpi.uSD.rate == null ? View.INVISIBLE : View.VISIBLE}"
         android:textColor="#4db6ac"
         android:text="@{String.valueOf(bitcoin.bpi.uSD.rate)+@string/usd}"
         android:layout_width="match_parent"
@@ -41,6 +44,7 @@
         android:gravity="center"
         android:textSize="25sp"
         android:textStyle="bold"
+        android:visibility="@{bitcoin.bpi.gBP.rate == null ? View.INVISIBLE : View.VISIBLE}"
         android:textColor="#4db6ac"
         android:text="@{String.valueOf(bitcoin.bpi.gBP.rate)+@string/ukp}"
         android:layout_width="match_parent"
@@ -50,6 +54,7 @@
         android:gravity="center"
         android:textSize="25sp"
         android:textStyle="bold"
+        android:visibility="@{bitcoin.bpi.eUR.rate == null ? View.INVISIBLE : View.VISIBLE}"
         android:textColor="#4db6ac"
         android:text="@{String.valueOf(bitcoin.bpi.eUR.rate)+@string/euro}"
         android:layout_width="match_parent"
