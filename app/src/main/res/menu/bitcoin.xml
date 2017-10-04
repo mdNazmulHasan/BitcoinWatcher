@@ -6,6 +6,7 @@
         android:title="reload"
         android:icon="@android:drawable/stat_notify_sync"
         app:showAsAction="always"
+        android:onClick="reload"
         />
 
 </menu>

@@ -9,6 +9,9 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import najmul.bitcoinwatcher.databinding.ActivityBitcoinBinding;
@@ -82,4 +85,14 @@ public class BitcoinActivity extends AppCompatActivity {
     Intent intent=new Intent(this,BitcoinActivity.class);
     startActivity(intent);
   }
+
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+    getMenuInflater().inflate(R.menu.bitcoin,menu);
+    return true;
+  }
+
+    public void reload(MenuItem item) {
+        reloadActivity();
+    }
 }
